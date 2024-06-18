@@ -43,7 +43,8 @@
   ],
   "license": "Apache-2.0",
   "scripts": {
-    "start": "nodemon --watch mesh.json node_modules/.bin/aio api-mesh run mesh.json",
+    "start": "nodemon --watch mesh.json --watch .env node_modules/.bin/aio api-mesh run mesh.json",
+    "debug": "nodemon --watch mesh.json --watch .env node_modules/.bin/aio api-mesh run mesh.json --debug",
     "setup": "aio plugins:install @adobe/aio-cli-plugin-api-mesh",
     "postinstall": "yarn setup"
   },
