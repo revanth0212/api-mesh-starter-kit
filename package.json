@@ -43,12 +43,14 @@
   ],
   "license": "Apache-2.0",
   "scripts": {
-    "start": "nodemon run.js --watch mesh.json"
+    "start": "nodemon --watch mesh.json node_modules/.bin/aio api-mesh run mesh.json",
+    "setup": "aio plugins:install @adobe/aio-cli-plugin-api-mesh",
+    "postinstall": "yarn setup"
   },
   "description": "API mesh starter template",
   "author": "Adobe Inc.",
   "devDependencies": {
-    "@adobe/aio-cli-plugin-api-mesh": "^3.3.0",
+    "@adobe/aio-cli": "^10.0.0",
     "nodemon": "^3.1.3"
   }
 }
