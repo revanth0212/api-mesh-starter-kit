@@ -45,7 +45,7 @@
   "scripts": {
     "start": "nodemon --watch mesh.json --watch .env node_modules/.bin/aio api-mesh run mesh.json",
     "debug": "nodemon --watch mesh.json --watch .env node_modules/.bin/aio api-mesh run mesh.json --debug",
-    "setup": "aio telemetry on & aio plugins:install @adobe/aio-cli-plugin-api-mesh",
+    "setup": "aio telemetry yes & aio plugins:install @adobe/aio-cli-plugin-api-mesh",
     "postinstall": "yarn setup"
   },
   "description": "API mesh starter template",
