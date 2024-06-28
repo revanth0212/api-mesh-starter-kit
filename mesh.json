@@ -2,7 +2,7 @@
   "meshConfig": {
     "sources": [
       {
-        "name": "MagentoMonolithApi",
+        "name": "AdobeCommerceAPI",
         "handler": {
           "graphql": {
             "endpoint": "{{env.COMMERCE_ENDPOINT}}"
