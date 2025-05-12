@@ -59,9 +59,19 @@ jobs:
           cat .env
       - name: Print AIO CLI Config
         run: aio config list
-      - name: Describe
-        run: aio api-mesh:describe
-      - name: Get
+      - name: Get Mesh
+        id: get_mesh
+        continue-on-error: true
         run: aio api-mesh:get
-      - name: Update
+      - name: Create Mesh
+        if: steps.get_mesh.outcome == 'failure'
+        run: aio api-mesh:create -c mesh.json --env .env
+      - name: Update Mesh
+        if: steps.get_mesh.outcome == 'success'
         run: aio api-mesh:update -c mesh.json --env .env
+      - name: Wait for 30 seconds
+        run: sleep 30
+      - name: Describe Mesh
+        run: aio api-mesh:describe
+      - name: Get Mesh Status
+        run: aio api-mesh:status
